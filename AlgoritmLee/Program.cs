@@ -25,6 +25,7 @@ namespace AlgoritmLee
             LeftWawe(x, y, len, myArr);
             UpWawe(x, y, len, myArr);
             RightWawe(x, y, len, myArr);
+            DownWawe(x, y, len, myArr);
         }
 
         public static void UpWawe(int x, int y, int len, int[,] myArr)
@@ -34,6 +35,16 @@ namespace AlgoritmLee
             {
                 myArr[x, upy] = len + 1;
                 WaweLee(x, upy, len + 1, myArr);
+            }
+        }
+
+        public static void DownWawe(int x, int y, int len, int[,] myArr)
+        {
+            int downy = y - 1;
+            if (downy >= 0 && downy < Y && myArr[x, downy] == 0)
+            {
+                myArr[x, downy] = len + 1;
+                WaweLee(x, downy, len + 1, myArr);
             }
         }
 
@@ -65,10 +76,12 @@ namespace AlgoritmLee
                 for (int j = 0; j < 3; j++)
                 {
                     myArr[i, j] = 0;
+                    
                     Console.Write("{0}\t", myArr[i, j]);
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("================");
             Console.ReadKey();
 
             myArr[0, 1] = -1;
@@ -79,8 +92,19 @@ namespace AlgoritmLee
             int y = 0;
             int len = 0;
 
+            myArr[0, 0] = -1; //старт
             WaweLee(x, y, len, myArr);
-
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    
+                    Console.Write("{0}\t", myArr[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("================");
+            Console.ReadKey();
 
         }
     }
