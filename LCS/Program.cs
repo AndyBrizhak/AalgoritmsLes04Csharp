@@ -10,13 +10,15 @@ namespace LCS
     class Program
     {
       public static  int MaxArr (int first,  int second)
-        {
+       {
             if (first> second)
             {
                 return first;
             }
             return second; 
-        }
+       }
+
+
 
         static void Main(string[] args)
         {
@@ -28,16 +30,16 @@ namespace LCS
             String s2 = "GEEKMAINDS";
             var _GeekMinds = s2.ToCharArray();
 
-            int[,] myArr = new int[11, 9];
-            
+            int[,] myArr = new int[_GeekBrains.Length + 1, _GeekMinds.Length + 1];
+
             int max = 0;
-            for (int i = 1; i < _GeekBrains.Length-1; i++)
+            for (int i = 1; i < _GeekBrains.Length - 1; i++)
             {
-                for (int j = 1; j < _GeekMinds.Length-1; j++)
+                for (int j = 1; j < _GeekMinds.Length - 1; j++)
                 {
                     if (_GeekBrains[i] == _GeekMinds[j])
                     {
-                        myArr[i, j] = myArr[i - 1, j - 1] +1;
+                        myArr[i, j] = myArr[i - 1, j - 1] + 1;
                     }
                     else
                     {
@@ -51,11 +53,18 @@ namespace LCS
 
             Console.ReadKey();
 
-            //for (int i = 0; i < length; i++)
-            //{
-
-            //}
-
-        }
+            for (int i = 1; i < _GeekBrains.Length - 1; i++)
+            {
+                for (int j = 1; j < _GeekMinds.Length - 1; j++)
+                {
+                    max = MaxArr(max, myArr[i, j]);
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("LCS: ");
+            Console.Write("{0}\t", max);
+            Console.ReadKey();
+        }      
+           
     }
 }
