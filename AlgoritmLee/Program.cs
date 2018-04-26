@@ -70,10 +70,10 @@ namespace AlgoritmLee
 
         static void Main(string[] args)
         {
-            int[,] myArr = new int[3, 3];
-            for (int i = 0; i < 3; i++)
+            int[,] myArr = new int[X, Y];
+            for (int i = 0; i < X; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < Y; j++)
                 {
                     myArr[i, j] = 0;
                     
@@ -94,9 +94,9 @@ namespace AlgoritmLee
 
             myArr[0, 0] = -1; //старт
             WaweLee(x, y, len, myArr);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < X; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < Y; j++)
                 {
                     
                     Console.Write("{0}\t", myArr[i, j]);
@@ -104,6 +104,9 @@ namespace AlgoritmLee
                 Console.WriteLine();
             }
             Console.WriteLine("================");
+            Console.ReadKey();
+            Console.WriteLine("Count steps to array X=2 Y=2:");
+            Console.Write("{0}\t", myArr[2, 2]);
             Console.ReadKey();
 
         }
