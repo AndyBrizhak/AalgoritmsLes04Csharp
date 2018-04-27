@@ -22,7 +22,15 @@ namespace Knight
             Y = Int32.Parse(Console.ReadLine()) - 1;
             Move(X, Y);
             Console.ReadLine();
-           
+            //for (int i = 0; i < 8-1; i++)
+            //{
+            //    for (int j = 0; j < 8 - 1; j++)
+            //    {
+            //        Console.Write("{0}\t", Ar[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ReadLine();
         }
 
         static void Move(int X, int Y)
