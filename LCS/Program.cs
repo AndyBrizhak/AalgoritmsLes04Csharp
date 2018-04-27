@@ -23,11 +23,11 @@ namespace LCS
         static void Main(string[] args)
         {
             //char[] _GeekBrains = new char[10] { G, E, E, K, B, R, A, I, N, S };
-            String s1 = "GEEKBRAINS";
+            String s1 = "1GEEKBRAINS";
             var _GeekBrains = s1.ToCharArray();
 
             //char[] _GeekMinds = new char[8];
-            String s2 = "GEEKMAINDS";
+            String s2 = "2GEEKMAINDS";
             var _GeekMinds = s2.ToCharArray();
 
             int[,] myArr = new int[_GeekBrains.Length + 1, _GeekMinds.Length + 1];
